@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<STYle>
+    body{
+
+        background-image:url('OIP2.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 100% 100%;
+    }
+    
+</STYle>
+<body bgcolor="lightgreen">
+    <h1 style="color: rgb(43, 0, 255);">NAMASKAR</h1>
+    <h2>IS WEBSITE MEI AP SABHI KA SWAGAT HAI</h2>
+    <p1 style="font-size: larger ">2.1 question khud likho itna toh karhi sakte ho<br>
+        from sympy import*\n<br>
+        r,t= symbols('r,t') # define the variables required as symbols<br>
+        r1=4*(1+cos(t)); # input first polar curve<br>
+        r2=5*(1-cos(t)); # input second polar curve<br>
+        dr1=diff(r1,t) # find the derivative of first function<br>
+        dr2=diff(r2,t) # find the derivative of second function<br>
+        t1=r1/dr1<br>
+        t2=r2/dr2<br>
+        q=solve (r1-r2,t) # solve r1==r2, to find the point of intersection between curves<br>
+        w1=t1.subs({t:float(q[1])}) #substitute the value of t in t1<br>
+        w2=t2.subs({t:float(q[1])}) #substitute the value of t in t2<br>
+        y1=atan(w1) # to find the inverse tan of w1<br>
+        y2=atan(w2) # to find the inverse tan of w2<br>
+        w=abs(y1-y2) # angle between the two the curves abs(w1-w2)<br>
+        print('Angle between curves in radians is %0.3f' %(w))<br>
+        </p1>
+        <br>
+        <br>
+        <p2 style="font-size: larger;">2.2<br>
+            from sympy import*<br>
+            r,t= symbols('r,t') # define the variables required as symbols<br>
+            r1=4*(cos(t)); # input first polar curve<br>
+            r2=5*(sin(t)); # input second polar curve<br>
+            dr1=diff(r1,t) # find the derivative of first function<br>
+            dr2=diff(r2,t) # find the derivative of second function<br>
+            t1=r1/dr1<br>
+            t2=r2/dr2<br>
+            q=solve (r1-r2,t) # solve r1==r2, to find the point of intersection between curves<br>
+            w1=t1.subs({t:float(q[0])}) #substitute the value of t in t1<br>
+            w2=t2.subs({t:float(q[0])}) #substitute the value of t in t2<br>
+            y1=atan(w1) # to find the inverse tan of w1<br>
+            y2=atan(w2) # to find the inverse tan of w2<br>
+            w=abs(y1-y2) # angle between the two the curves abs(w1-w2)<br>
+            print('Angle between curves in radians is %0.4f' %float(w))<br>
+            </p2>
+            <br>
+            <br>
+            <p3 style="font-size: larger;">2.3<br>
+                from sympy import*<br>
+                t= Symbol('t') # define t as symbol<br>
+                r= Symbol('r') # define r as symbol<br>
+                r=4*(1+cos(t))<br>
+                r1= Derivative (r,t).doit() #find he first derivative of r w.r.t."t"<br>
+                r2= Derivative (r1,t).doit() #find he first derivative of r1 w.r.t."t"<br>
+                rho=(r**2+r1**2)**(1.5)/(r**2+2*r1**2-r*r2) # substitute r1 and r2 in formula<br>
+                rho1=rho.subs(t,pi/2) # substitute t in rho<br>
+                print('the radius of curvature is %3.4f units'%rho1)
+            </p3>
+            <br>
+            <br>
+            <p4 style="font-size: larger;">2.4<br>
+                from sympy import*<br>
+                t,r,a,n=symbols('t r a n')<br>
+                r=a*sin(n*t)<br>
+                r1=Derivative(r,t).doit()<br>
+                r2=Derivative(r1,t).doit()<br>
+                rho=(r**2+r1**2)**1.5/(r**2+2*r1**2-r*r2);<br>
+                rho1=rho.subs(t,pi/2)<br>
+                rho1=rho1.subs(n,1)<br>
+                print('the radius of curvature is')<br>
+                display(simplify(rho1))<br>
+            </p4>
+            <br>
+            <br>
+            <p5 style="font-size: larger;">2.5<br>
+                from sympy import *<br>
+                from sympy.abc import rho,x,y,r,k,t,a,b,c,alpha # define all symbols is required<br>
+                y=(sqrt(x)-4)**2<br>
+                y=a*sin(t) # input the parametric equation<br>
+                x=a*cos(t)<br>
+                dydx=simplify(Derivative(y,t).doit())/simplify(Derivative(x,t).doit()) # find the derivative of parametric equation<br>
+                rho=simplify((1+dydx**2)**1.5/(Derivative(dydx,t).doit()/(Derivative(x,t).doit())))<br>
+                print('Radius of curvature is')<br>
+                display(ratsimp(rho))<br>
+                t1=pi/2<br>
+                r1=5<br>
+                rho1=rho.subs(t,t1);<br>
+                rho2=rho1.subs(a,r1);<br>
+                print('\n\n Radius of curvature at r=5 and t=pi/2 is', simplify(rho2));<br>
+                curvature=1/rho2;<br>
+                print('\n\n Curvatue at (5,pi/2) is', float(curvature))<br>
+                </p5>
+                <br>
+                <br>
+                <p6 style="font-size: larger;">2.6<br>
+                    from sympy import * <br>
+                    from sympy.abc import rho,x,y,r,k,t,a,b,c,alpha # define all symbols is required <br>
+                    y=(a*sin(t))**(3/2) # input the parametric equation <br>
+                    x=(a*cos(t))**(3/2) <br>
+                    dydx=simplify(Derivative(y,t).doit())/simplify(Derivative(x,t).doit()) # find the derivative of parametric equation <br>
+                    rho=simplify((1+dydx**2)**1.5/(Derivative(dydx,t).doit()/(Derivative(x,t).doit())))  <br>
+                    print('Radius of curvature is') <br>
+                    display(ratsimp(rho)) <br>
+                    t1=pi/4 <br>
+                    r1=1 <br>
+                    rho1=rho.subs(t,t1); <br>
+                    rho2=rho1.subs(a,r1); <br>
+                    display('Radius of curvature at r=1 and t=pi/4 is', simplify(rho2)); <br>
+                    curvature=1/rho2; <br>
+                    print('\n\n Curvatue at (1,pi/4) is', float(curvature)) <br>
+                </p6>
+                
+                <br>
+                <br>
+                <p7 style="font-size:larger;">in codes ko copy karke jupyter mei paste kare</p7>
+                <h1 style="color: rgba(5, 1, 24, 0.89);"><center>AZAD HIND</center></h1>
+</body>
+</html>
